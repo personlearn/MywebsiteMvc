@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="~/Scripts/flv.min.js"></script>
+<video id="videoElement" controls="controls" preload="none"></video>
+<script>
+    if (flvjs.isSupported()) {
+        var videoElement = document.getElementById('videoElement');
+        var flvPlayer = flvjs.createPlayer({
+            type: 'flv',
+            url: '../../source/数码宝贝OP.flv'
+        });
+        flvPlayer.attachMediaElement(videoElement);
+        flvPlayer.load();
+        //flvPlayer.play();
+    }
+</script>
+
+<object id="player" height="400" width="400" classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6" type="application/x-oleobject">
+    <param name="AutoStart" value="-1">
+    <!--是否自动播放-->
+    <param name="Balance" value="0">
+    <!--调整左右声道平衡,同上面旧播放器代码-->
+    <param name="enabled" value="-1">
+    <!--播放器是否可人为控制-->
+    <param name="EnableContextMenu" value="-1">
+    <!--是否启用上下文菜单-->
+    <param name="url" value="../../source/「CLANNAD」片头曲.mp4">
+    <!--播放的文件地址-->
+    <param name="PlayCount" value="1">
+    <!--播放次数控制,为整数-->
+    <param name="rate" value="1">
+    <!--播放速率控制,1为正常,允许小数,1.0-2.0-->
+    <param name="currentPosition" value="0">
+    <!--控件设置:当前位置-->
+    <param name="currentMarker" value="0">
+    <!--控件设置:当前标记-->
+    <param name="defaultFrame" value="">
+    <!--显示默认框架-->
+    <param name="invokeURLs" value="0">
+    <!--脚本命令设置:是否调用URL-->
+    <param name="baseURL" value="">
+    <!--脚本命令设置:被调用的URL-->
+    <param name="stretchToFit" value="1">
+    <!--是否按比例伸展-->
+    <param name="volume" value="50">
+    <!--默认声音大小0%-100%,50则为50%-->
+    <param name="mute" value="0">
+    <!--是否静音-->
+    <param name="uiMode" value="Full">
+    <!--播放器显示模式:Full显示全部;mini最简化;None不显示播放控制,只显示视频窗口;invisible全部不显示-->
+    <param name="windowlessVideo" value="0">
+    <!--如果是0可以允许全屏,否则只能在窗口中查看-->
+    <param name="fullScreen" value="0">
+    <!--开始播放是否自动全屏-->
+    <param name="enableErrorDialogs" value="-1">
+    <!--是否启用错误提示报告-->
+    <param name="SAMIStyle" value="">
+    <!--SAMI样式-->
+    <param name="SAMILang" value="">
+    <!--SAMI语言-->
+    <param name="SAMIFilename" value="">
+    <!--字幕ID-->
+    @*<PARAM NAME="captioningID" VALUE="">
+        <PARAM NAME="VideoBorderColor" VALUE="#ffff00">
+        <param name="ShowDisplay" value="1">
+        <param name="ShowControls" value="1">
+        <param name="AutoRewind" value="1">
+        <param name="Appearance" value="1">
+        <param name="BorderStyle" value="0">
+        <param name="MovieWindowHeight" value="240">
+        <param name="MovieWindowWidth" value="320">*@
+</object>
+
+@*<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+        codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+        name="flashmo_133_fisheye" align="middle" id="flashmo_133_fisheye"
+        style="border: 1px solid #FFFFFF; background-color: #FFFFFF">
+    <param name="allowScriptAccess" value="sameDomain" />
+    <param name="movie" value="flashmo_133_fisheye.swf" />
+    <param name="quality" value="high" />
+    <param name="bgcolor" value="#FFFFFF" />
+    <embed src="flashmo_133_fisheye.swf" name="flashmo_133_fisheye.swf" align="middle" allowScriptAccess="sameDomain"
+           type="application/x-shockwave-flash"
+           pluginspage="http://www.macromedia.com/go/getflashplayer"
+           style="border: 1px solid #FFFFFF; background-color: #FFFFFF" />
+</object>*@

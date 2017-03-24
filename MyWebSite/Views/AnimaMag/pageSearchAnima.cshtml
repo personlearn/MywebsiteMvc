@@ -1,0 +1,117 @@
+﻿@model MyWebSite.Models.searchAnimaInfo
+@using Webdiyer.WebControls.Mvc;
+@{
+    ViewBag.Title = "pageSearchAnima";
+}
+
+@*<h2>pageSearchAnima</h2>
+    @ViewBag.str*@
+
+@*----------------------------------ViewModel数据信息分页-----------------------*@
+@Html.Raw("--------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+<br />
+@using (Html.BeginForm("pageSearchAnima", "Home", new RouteValueDictionary { { "id", "" } }, FormMethod.Get))
+{
+    @Html.Label("查询条件(标题)：") <input name="title" value="@Request.QueryString["title"]" />
+
+    <input type="submit" value="查询" />
+}
+<style type="text/css">
+    table {
+        width: 100%;
+        border: 1px solid #666666;
+        border-collapse: collapse; /* 边框合并属性  */
+    }
+
+    td {
+        word-wrap: break-word;
+        word-break: break-all;
+        border: 1px solid #666666;
+    }
+
+    #TDidCss {
+        white-space: nowrap;
+    }
+
+    th {
+        background-color: gray;
+        border: 1px solid #666666;
+    }
+</style>
+<script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".tdmagnet").dblclick(function () {
+            $.ajax({
+                type: "post",
+                url: "/AnimaMag/AJAXdownload",
+                data: { "magnet": $(this).html() },
+                dataType: "text",
+                success(data) {
+                    alert(data);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("失败！");
+                    alert(XMLHttpRequest.status);
+                    alert(XMLHttpRequest.readyState);
+                    alert(textStatus);
+                    return false;
+                }
+            })
+        })
+    })
+</script>
+<table>
+    <tr>
+        <th>编号</th>
+        <th>磁链</th>
+        <th>标题</th>
+        <th>标签</th>
+        <th>类型</th>
+        <th>年份</th>
+        <th>添加时间</th>
+    </tr>
+    @foreach (var info in Model.Infos)
+    {
+        <tr>
+            <td id="TDidCss">@Html.DisplayFor(model => info.id)</td>
+            <td class="tdmagnet">@Html.DisplayFor(model => info.magnet)</td>
+            <td>@Html.DisplayFor(model => info.title)</td>
+            <td>@Html.DisplayFor(model => info.tag)</td>
+            <td>@Html.DisplayFor(model => info.atype)</td>
+            <td>@Html.DisplayFor(model => info.years)</td>
+            <td>@Html.DisplayFor(model => info.addtime)</td>
+        </tr>
+    }
+    @*----------------------------------使用ViewBig变量传递数据-----------------------*@
+    @*@foreach (Model.Info info in (ViewBag.PagerData as IEnumerable<Model.Info>))
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => info.InfoID)</td>
+                <td>@Html.DisplayFor(model => info.Title)</td>
+                <td>@Html.DisplayFor(model => info.Content)</td>
+            </tr>
+        }*@
+</table>
+@Html.Pager(Model.Infos, new PagerOptions
+{
+    PageIndexParameterName = "id",
+    AlwaysShowFirstLastPageNumber = true,
+    AutoHide = true,
+    //ShowPageIndexBox = true,
+    FirstPageText = "首页",
+    PrevPageText = "上一页",
+    NextPageText = "下一页",
+    LastPageText = "末页",
+    ShowFirstLast = true,
+    ShowMorePagerItems = true,
+    ShowNumericPagerItems = true,
+    ShowPrevNext = true,
+    ShowDisabledPagerItems = true,
+    //PageIndexBoxId = PageIndexBoxType.TextBox,
+    //PageIndexBoxWrapperFormatString = "请输入页数{0}",
+    GoToButtonId = "转到"
+})
+@Html.Raw("共：") @Model.Infos.TotalItemCount @Html.Raw("页，")
+@Model.Infos.CurrentPageIndex @Html.Raw("/") @Model.Infos.TotalPageCount @Html.Raw("页")
+
