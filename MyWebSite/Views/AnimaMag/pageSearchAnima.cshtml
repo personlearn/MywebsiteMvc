@@ -10,10 +10,10 @@
 @*----------------------------------ViewModel数据信息分页-----------------------*@
 @Html.Raw("--------------------------------------------------------------------------------------------------------------------------------------------------------------------")
 <br />
-@using (Html.BeginForm("pageSearchAnima", "Home", new RouteValueDictionary { { "id", "" } }, FormMethod.Get))
+@using (Html.BeginForm("pageSearchAnima", "AnimaMag", new RouteValueDictionary { { "id", "" } }, FormMethod.Get))
 {
     @Html.Label("查询条件(标题)：") <input name="title" value="@Request.QueryString["title"]" />
-
+    @Html.Label("年份：")<input name="year" value="@Request.QueryString["year"]" />
     <input type="submit" value="查询" />
 }
 <style type="text/css">

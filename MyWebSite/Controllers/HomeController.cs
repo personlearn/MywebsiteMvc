@@ -29,7 +29,7 @@ namespace MyWebSite.Controllers
             DB db = new DB();
             if (db.sqlEx(string.Format("select * from userinfo where username='{0}' and password='{1}'", username, password)) > 0)
             {
-                return Redirect("../AnimaMag/pageSearchAnima");
+                return Redirect("../Navigate/Index");
             }
             else
             {

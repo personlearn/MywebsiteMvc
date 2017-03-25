@@ -18,10 +18,13 @@ namespace MyWebSite.Controllers
             return View();
         }
 
-        public ViewResult pageSearchAnima(int? id = 1, string title = null)
+        public ViewResult pageSearchAnima(int? id = 1, string title = null, string year = null)
         {
             DB db = new DB();
-            DataTable dt = db.reDt("select * from resource ");
+            string sql = "select * from resource where 1=1 ";
+            sql = string.IsNullOrEmpty(title) ? sql : string.Format(" and title like '%{0}%'", title);
+            sql = string.IsNullOrEmpty(year) ? sql : sql + string.Format(" and DATEPART(year,years)={0}", year);
+            DataTable dt = db.reDt(sql);
             string str = ViewBag.str = DB.DataTableToJsonWithJavaScriptSerializer(dt);
 
             //信息列表(此处使用分页控件提出数据)

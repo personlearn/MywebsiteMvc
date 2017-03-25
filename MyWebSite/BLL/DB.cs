@@ -26,7 +26,7 @@ namespace MyWebSite.App_Start
         public SqlConnection GetCon()
         {
             //return new SqlConnection(ConfigurationManager.AppSettings["ConnectionString"].ToString());
-            SqlConnection con = new SqlConnection("Server=127.0.0.1;database=db_Myweb;UId=sa;password=123456");
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             return con;
         }
 

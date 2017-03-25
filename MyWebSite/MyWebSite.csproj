@@ -196,6 +196,7 @@
     <Content Include="Views\AnimaMag\Index.cshtml" />
     <Content Include="Views\Navigate\Index.cshtml" />
     <Content Include="Views\Article\TYArticleGet.cshtml" />
+    <Content Include="Views\Article\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
