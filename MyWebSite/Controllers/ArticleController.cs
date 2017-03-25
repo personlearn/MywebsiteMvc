@@ -23,7 +23,7 @@ namespace MyWebSite.Controllers
         [HttpPost]
         public string TYArticleGet(string url)
         {
-            StringBuilder sb = new StringBuilder();
+            
             HttpHeader header = new HttpHeader();
             header.accept = "image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/x-silverlight, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, application/x-ms-application, application/x-ms-xbap, application/vnd.ms-xpsdocument, application/xaml+xml, application/x-silverlight-2-b1, */*";
             header.contentType = "application/x-www-form-urlencoded";
@@ -37,6 +37,7 @@ namespace MyWebSite.Controllers
             string ex = "";
             foreach (string urlx in urllist)
             {
+                StringBuilder sb = new StringBuilder();
                 //sb.Append(RegexpHelper.TYRegexArticle(HTMLHelper.GetHtml(urlx, header)) + "\n");
                 MatchCollection articles = RegexpHelper.TYRegexArticle(HTMLHelper.GetHtml(urlx, header));
                 foreach (Match item in articles)
@@ -46,7 +47,7 @@ namespace MyWebSite.Controllers
                 }
                 if (ArticletoXml.toXml(articles, "source//tianya", title + ".xml", "TYArticle", "Article", ref ex))
                 {
-                    sb.Append("XML SUCCUESSSSSSSSS\n");
+                    sb.Append("XML SUCCUESSSSSSSSS\r\n");
                 }
                 else
                 {
@@ -55,10 +56,10 @@ namespace MyWebSite.Controllers
 
                 if (ArticletoXml.toTxt(sb.ToString(), "source//tianya", title + ".txt"))
                 {
-                    sb.Append("TXT SUCCUESSSSSSSSS\n");
+                    sb.Append("TXT SUCCUESSSSSSSSS\r\n");
                 }
             }
-            return sb.ToString();
+            return "获取成功！";
         }
 
 
