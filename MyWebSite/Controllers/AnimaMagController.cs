@@ -10,6 +10,7 @@ using Webdiyer.WebControls.Mvc;
 
 namespace MyWebSite.Controllers
 {
+    [Authorize]
     public class AnimaMagController : Controller
     {
         // GET: AnimaMag

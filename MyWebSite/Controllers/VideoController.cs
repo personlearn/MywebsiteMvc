@@ -7,6 +7,7 @@ using WMPLib;
 
 namespace MyWebSite.Controllers
 {
+    [Authorize]
     public class VideoController : Controller
     {
         // GET: Video

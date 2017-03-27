@@ -214,3 +214,25 @@ C:\Users\yagamitaiichi\Documents\Visual Studio 2015\Projects\MywebsiteMvc\MyWebS
 C:\Users\yagamitaiichi\Documents\Visual Studio 2015\Projects\MywebsiteMvc\MyWebSite\obj\Debug\MyWebSite.csproj.ResolveComReference.cache
 C:\Users\yagamitaiichi\Documents\Visual Studio 2015\Projects\MywebsiteMvc\MyWebSite\obj\Debug\MyWebSite.dll
 C:\Users\yagamitaiichi\Documents\Visual Studio 2015\Projects\MywebsiteMvc\MyWebSite\obj\Debug\MyWebSite.pdb
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.AspNet.Identity.Core.dll
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.Owin.dll
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.Owin.Security.Cookies.dll
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.Owin.Security.dll
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.Owin.Security.OAuth.dll
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Newtonsoft.Json.dll
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Owin.dll
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.AspNet.Identity.Core.xml
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.Owin.xml
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.Owin.Security.xml
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.Owin.Security.Cookies.xml
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.Owin.Security.OAuth.xml
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Newtonsoft.Json.xml
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\BaiduNetdiskDownload\MyWebSite\MyWebSite\MyWebSite\bin\Microsoft.AspNet.SignalR.SystemWeb.xml

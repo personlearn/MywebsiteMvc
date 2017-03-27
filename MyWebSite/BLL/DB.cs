@@ -23,7 +23,7 @@ namespace MyWebSite.App_Start
         /// 连接数据库
         /// </summary>
         /// <returns>返回SqlConnection对象</returns>
-        public SqlConnection GetCon()
+        public static SqlConnection GetCon()
         {
             //return new SqlConnection(ConfigurationManager.AppSettings["ConnectionString"].ToString());
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
@@ -42,8 +42,8 @@ namespace MyWebSite.App_Start
             SqlCommand cmd = new SqlCommand(cmdstr, con);
             try
             {
-                cmd.ExecuteNonQuery();//执行SQL 语句并返回受影响的行数
-                return 1;//成功返回１
+                //执行SQL 语句并返回受影响的行数
+                return cmd.ExecuteNonQuery();//成功返回１
             }
             catch (Exception)
             {
@@ -81,6 +81,36 @@ namespace MyWebSite.App_Start
             SqlDataReader dr = com.ExecuteReader(CommandBehavior.CloseConnection);
             return dr;//返回SqlDataReader对象dr
         }
+
+        public static int ExecuteNonQuery(string strsql, SqlParameter[] sqlparameter)
+        {
+            SqlConnection con = GetCon();//连接数据库
+            con.Open();//打开连接
+            SqlCommand cmd = new SqlCommand(strsql, con);
+            try
+            {
+                //执行SQL 语句并返回受影响的行数
+                return cmd.ExecuteNonQuery();//成功返回１
+            }
+            catch (Exception)
+            {
+                return 0;//失败返回０
+            }
+            finally
+            {
+                con.Dispose();//释放连接对象资源
+            }
+        }
+
+        public static SqlDataReader ExecuteReader(string strsql, SqlParameter[] sqlparameter)
+        {
+            SqlConnection conn = GetCon();//连接数据库
+            conn.Open();//并打开了连接
+            SqlCommand com = new SqlCommand(strsql, conn);
+            SqlDataReader dr = com.ExecuteReader(CommandBehavior.CloseConnection);
+            return dr;
+        }
+
         /// <summary>
         /// MD5加密
         /// </summary>

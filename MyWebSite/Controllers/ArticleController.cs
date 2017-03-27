@@ -12,8 +12,10 @@ using System.Xml.Linq;
 
 namespace MyWebSite.Controllers
 {
+    [Authorize]
     public class ArticleController : Controller
     {
+        [Authorize]
         // GET: Article
         public ActionResult Index()
         {

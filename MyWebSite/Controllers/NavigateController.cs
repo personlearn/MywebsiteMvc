@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace MyWebSite.Controllers
 {
+    [Authorize]
     public class NavigateController : Controller
     {
         // GET: Navigate
